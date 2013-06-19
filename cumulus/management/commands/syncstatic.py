@@ -102,6 +102,7 @@ class Command(NoArgsCommand):
                 raise
 
         if CUMULUS["USE_PYRAX"]:
+            print os.path.realpath(__file__)
             public = not CUMULUS["SERVICENET"]
             pyrax.set_credentials(CUMULUS["USERNAME"], CUMULUS["API_KEY"])
             connection = pyrax.connect_to_cloudfiles(region=CUMULUS["REGION"],
